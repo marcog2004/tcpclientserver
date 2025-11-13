@@ -10,9 +10,13 @@ server_address = ('localhost', 10000)
 sock.connect(server_address)
 print("Connected to Server.")
 
-try:
+initial_time = time.time()
 
-    for i in range(5):
+TOTAL_TIME = 300
+DELAY = 0
+
+try:
+    while time.time() - initial_time < TOTAL_TIME:
         # Send data
         message = 'test'
         sock.sendall(message.encode('utf-8'))
@@ -23,6 +27,7 @@ try:
         end = time.time()
 
         print(f"Received: PONG {len(data)} {data.decode()} | RTT = {(end - start)*1000:.3f} ms")
+        time.sleep(DELAY)
 
 finally:
     sock.close()

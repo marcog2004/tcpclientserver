@@ -10,9 +10,7 @@ sock.bind(server_address)
 # Server starts listening on the port
 sock.listen(1)
 
-messages = 0
-
-while messages<5:
+while True:
     # Wait for a connection
     print("TCP Server waiting for client.", file=sys.stderr)
     connection, client_address = sock.accept()
@@ -23,7 +21,6 @@ while messages<5:
             data = connection.recv(16)
             if data:
                 print(f"Received: PING {len(data)} {data.decode('utf-8')}", file=sys.stderr)
-                messages+=1
                 connection.sendall(data)
             else:
                 break
