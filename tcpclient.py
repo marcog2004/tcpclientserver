@@ -1,3 +1,7 @@
+# Marco Greco 40285114
+# COEN 366 Lab 2 TCP Client
+# Adapted from Lab slides
+
 import socket
 import sys
 import time
@@ -13,7 +17,7 @@ print("Connected to Server.")
 initial_time = time.time()
 
 TOTAL_TIME = 300
-DELAY = 0
+DELAY = 60
 
 try:
     while time.time() - initial_time < TOTAL_TIME:

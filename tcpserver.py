@@ -1,3 +1,8 @@
+# Marco Greco 40285114
+# COEN 366 Lab 2 TCP Server
+# Adapted from Lab slides
+
+
 import socket
 import sys
 
